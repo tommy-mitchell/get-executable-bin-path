@@ -1,0 +1,8 @@
+{
+	"private": true,
+	"name": "mapped-binary-fixture",
+	"type": "module",
+	"bin": {
+		"command": "./dist/cli.js"
+	}
+}

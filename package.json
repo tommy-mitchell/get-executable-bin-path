@@ -1,0 +1,77 @@
+{
+	"name": "get-executable-bin-path",
+	"version": "0.0.0",
+	"description": "Get the current package's binary path and ensure it's executable.",
+	"keywords": [
+		"nodejs",
+		"shell",
+		"testing",
+		"unit-testing",
+		"package",
+		"terminal",
+		"binary",
+		"bin",
+		"executable",
+		"package-json",
+		"package.json",
+		"path",
+		"file",
+		"fs",
+		"permission"
+	],
+	"license": "MIT",
+	"repository": "tommy-mitchell/get-executable-bin-path",
+	"author": {
+		"name": "Tommy Mitchell",
+		"url": "https://tommymitchell.io"
+	},
+	"type": "module",
+	"exports": {
+		"default": "./dist/index.js",
+		"types": "./dist/index.d.ts"
+	},
+	"files": [
+		"dist"
+	],
+	"engines": {
+		"node": "^18.18 || ^20.8 || ^21"
+	},
+	"scripts": {
+		"prepare": "npm run build",
+		"build": "tsc -p tsconfig.build.json && tsup && dprint fmt --excludes '!dist'",
+		"lint": "xo",
+		"format": "dprint fmt && xo --fix",
+		"test": "c8 ava && tsc -p tsconfig.build.json && tsd -t dist/index.d.ts"
+	},
+	"ava": {
+		"files": [
+			"!test/fixtures"
+		],
+		"extensions": {
+			"ts": "module"
+		},
+		"nodeArguments": [
+			"--import=tsimp"
+		]
+	},
+	"dependencies": {
+		"get-bin-path": "^11.0.0",
+		"is-executable": "^2.0.1"
+	},
+	"devDependencies": {
+		"@tommy-mitchell/dprint-config": "^0.1.1",
+		"@tommy-mitchell/eslint-config-xo": "^0.3.1",
+		"@tommy-mitchell/tsconfig": "^2.1.0",
+		"@types/node": "^18.18",
+		"ava": "^6.1.3",
+		"c8": "^10.1.2",
+		"dprint": "^0.47.1",
+		"execa": "^9.3.0",
+		"tsd": "^0.31.1",
+		"tsimp": "^2.0.11",
+		"tsup": "^8.1.0",
+		"type-fest": "^4.21.0",
+		"typescript": "~5.5.3",
+		"xo": "^0.58.0"
+	}
+}

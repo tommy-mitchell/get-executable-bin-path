@@ -1,0 +1,9 @@
+{
+	"private": true,
+	"name": "multiple-binaries-fixture",
+	"type": "module",
+	"bin": {
+		"foo": "./foo.js",
+		"bar": "./bar.js"
+	}
+}

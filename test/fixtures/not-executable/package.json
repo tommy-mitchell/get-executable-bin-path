@@ -1,0 +1,6 @@
+{
+	"private": true,
+	"name": "not-executable-fixture",
+	"type": "module",
+	"bin": "./cli.js"
+}
