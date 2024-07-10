@@ -1,6 +1,6 @@
 {
 	"name": "get-executable-bin-path",
-	"version": "0.0.0",
+	"version": "0.1.0",
 	"description": "Get the current package's binary path and ensure it's executable.",
 	"keywords": [
 		"nodejs",
