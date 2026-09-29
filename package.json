@@ -1,6 +1,6 @@
 {
 	"name": "get-executable-bin-path",
-	"version": "0.1.0",
+	"version": "1.0.0",
 	"description": "Get the current package's binary path and ensure it's executable.",
 	"license": "MIT",
 	"repository": "tommy-mitchell/get-executable-bin-path",
@@ -60,6 +60,8 @@
 		"xo": "^5.0.1"
 	},
 	"ava": {
-		"extensions": ["ts"]
+		"extensions": [
+			"ts"
+		]
 	}
 }
