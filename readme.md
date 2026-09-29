@@ -42,6 +42,8 @@ test("main", async t => {
 });
 ```
 
+If you want to test the source binary instead of the compiled one (e.g. with TypeScript), you can use the [`map` option](#map).
+
 ## API
 
 ### getExecutableBinPath(options?): `Promise<string>`

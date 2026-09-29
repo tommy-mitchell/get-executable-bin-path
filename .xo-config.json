@@ -1,6 +1,0 @@
-{
-	"extends": ["@tommy-mitchell/xo"],
-	"rules": {
-		"unicorn/prevent-abbreviations": "off"
-	}
-}

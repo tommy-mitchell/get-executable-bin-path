@@ -6,16 +6,16 @@ import {
 	getExecutableBinPath,
 	getExecutableBinPathSync,
 	type Options,
-} from "../src/index.js";
-import { atFixture } from "./_utils.js";
+} from "../src/index.ts";
+import { atFixture } from "./_utils.ts";
 
 // dprint-ignore
-type MacroArgs = [Options & OneOf<{
-	expected: string;
+type MacroArgs = [OneOf<{
 	error: Pick<ThrowsExpectation<Error>, "instanceOf" | "message">;
-}>];
+	expected: string;
+}> & Options];
 
-const verify = test.macro<MacroArgs>(async (t, { expected, error, ...options }) => {
+const verify = test.macro<MacroArgs>(async (t, { error, expected, ...options }) => {
 	if (error) {
 		await t.throwsAsync(getExecutableBinPath(options), error);
 		t.throws(() => getExecutableBinPathSync(options), error);
@@ -30,9 +30,9 @@ const verify = test.macro<MacroArgs>(async (t, { expected, error, ...options }) 
 
 for (const name of ["foo", "bar"]) {
 	test(`multiple - ${name}`, verify, {
-		name,
 		cwd: atFixture("multiple-binaries"),
 		expected: atFixture(`multiple-binaries/${name}.js`),
+		name,
 	});
 }
 
@@ -53,7 +53,7 @@ test("not executable", verify, {
 });
 
 test("mapped", verify, {
-	map: binPath => binPath.replace("dist", "src").replace(".js", ".ts"),
 	cwd: atFixture("mapped-binary"),
 	expected: atFixture("mapped-binary/src/cli.ts"),
+	map: binPath => binPath.replace("dist", "src").replace(".js", ".ts"),
 });

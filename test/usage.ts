@@ -1,7 +1,7 @@
 import anyTest, { type TestFn } from "ava";
 import { execa } from "execa";
-import { getExecutableBinPath } from "../src/index.js";
-import { atFixture } from "./_utils.js";
+import { getExecutableBinPath } from "../src/index.ts";
+import { atFixture } from "./_utils.ts";
 
 const test = anyTest as TestFn<{
 	binPath: string;

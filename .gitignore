@@ -1,6 +1,5 @@
-node_modules
-coverage
-.tsimp
-dist
+node_modules/
+coverage/
+dist/
 package-lock.json
 yarn.lock
